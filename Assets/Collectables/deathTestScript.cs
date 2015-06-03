@@ -7,5 +7,7 @@ public class deathTestScript : MonoBehaviour {
 	{
 		Destroy(gameObject);
 		Death.dead = true;
+		
+		//Fuck Bitches Get Money
 	}
 }
