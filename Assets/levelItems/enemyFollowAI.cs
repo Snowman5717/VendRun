@@ -3,32 +3,42 @@ using System.Collections;
 
 public class enemyFollowAI : MonoBehaviour {
 
-    public GameObject targetTwo;
-
-    private Vector3 initPos;
-
     public GameObject player;
+    public string botNumber;
 
+    private GameObject[] beaconsList;
     private NavMeshAgent agent;
+    private int currentPos;
 
 	// Use this for initialization
 	void Start () 
     {
 
-        agent = GetComponent<NavMeshAgent>();
+        agent = GetComponent<NavMeshAgent>();        
+        beaconsList = GameObject.FindGameObjectsWithTag(botNumber);
 
-        initPos = transform.position;
-	
 	}
 	
 	// Update is called once per frame
     void Update()
     {
 
-        agent.SetDestination(targetTwo.transform.position);
+        if(agent.remainingDistance < 2)
+        {
+            nextPatrolPosition();  
+        }
+    }
 
+    void nextPatrolPosition()
+    {
+        if(beaconsList.Length == 0)
+        {
+            return;
+        }
 
+        agent.destination = beaconsList[currentPos].transform.position;
 
+        currentPos = (currentPos + 1) % beaconsList.Length;
     }
 
 }
