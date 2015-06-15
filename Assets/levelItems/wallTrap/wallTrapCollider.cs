@@ -16,7 +16,7 @@ public class wallTrapCollider : MonoBehaviour {
     {
         if(col.tag == "Vend")
         {
-            Debug.Log("PLAYER IS BEING ATTACKED BY A WALL");
+           // Debug.Log("PLAYER IS BEING ATTACKED BY A WALL");
             wallTrapMovement.activatedTrap = true;
         }
     }
@@ -25,7 +25,7 @@ public class wallTrapCollider : MonoBehaviour {
     {
         if (col.tag == "Vend")
         {
-            Debug.Log("THE WALL IS CALM");
+            //Debug.Log("THE WALL IS CALM");
 
             wallTrapMovement.activatedTrap = false;
         }

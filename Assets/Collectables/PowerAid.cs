@@ -11,7 +11,7 @@ public class PowerAid : MonoBehaviour
 	void Start()
 	{
 		rend = GetComponent<Renderer>();
-		rend.enabled = true;
+		rend.enabled = false;
 	}
 	
 	void OnTriggerEnter(Collider col)

@@ -32,7 +32,7 @@ public class Death : MonoBehaviour {
             PlayerInput.rigidBody.constraints = RigidbodyConstraints.None;
             PlayerInput.rigidBody.constraints = RigidbodyConstraints.FreezeRotation;
             transform.position = spawn.transform.position;
-            transform.rotation = spawn.transform.rotation;
+			transform.rotation = Quaternion.Euler(0,90,0);
 			rend.enabled = true;
 			respawnTimer = 0;
 			respawnCheck = false;
@@ -46,7 +46,7 @@ public class Death : MonoBehaviour {
 			rend.enabled = false;
 			Instantiate(blueAnim, transform.position, Quaternion.identity);
 			dead = false;
-			killFeed.printOut = "Player Has Died!"; 	
+				
 		}
 		else
 		{

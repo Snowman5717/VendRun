@@ -4,11 +4,9 @@ using System.Collections;
 public class wallTrapMovement : MonoBehaviour {
 
     public int wallSpeed = 0;
-
     public static bool activatedTrap = false;
-
     private Vector3 trapInitPos;
-	// Use this for initialization
+    
 	void Start () {
 
         trapInitPos = gameObject.transform.position;
@@ -29,11 +27,12 @@ public class wallTrapMovement : MonoBehaviour {
 	
 	}
 	
-	void OnCollisionEnter(Collision col)
+	void OnTriggerEnter(Collider col)
 	{
 		if(col.gameObject.tag == "Vend")
 		{
 			Death.dead = true;
+			killFeed.printOut = "Player has died to a wall-trap!"; 
 		}
 	}
 }

@@ -4,7 +4,7 @@ using System.Collections;
 public class PlayerInput : MonoBehaviour {
 	
 	public static Rigidbody rigidBody;
-	public static int velocity = 25;
+	public static int velocity = 20;
 	public static int rotVelocity = 2;
 	public static int item = 0; //0-nothing 1-poweraid 2-
 	
